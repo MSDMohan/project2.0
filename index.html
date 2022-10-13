@@ -51,6 +51,7 @@
 
           <!-- ====== -->
           <div class="container">
+            <input type="checkbox" id="toogle">
             <button type="submit" class="btn7" onclick="openPopup()">Get Discount</button>
             <div class="popup" id="popup">
               <img src="./img/right.png">
@@ -260,6 +261,9 @@
             function closePopup(){
               popup.classList.remove("open-popup");
             }
+            document.getElementById("toogle").addEventListener("click", function(){
+              document.getElementsByTagName('body')[0].classList.toggle("dark-theme");
+            });  
 
           </script>
           
