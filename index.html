@@ -53,6 +53,9 @@
           <div class="container">
             <input type="checkbox" id="toogle">
             <button type="submit" class="btn7" onclick="openPopup()">Get Discount</button>
+              <button id="we-but" onclick="geolocation()">Get location</button>
+            <img id="we-img" src="" alt="">
+            <h5 id="we-out"></h5>
             <div class="popup" id="popup">
               <img src="./img/right.png">
               <h1>25% off</h1>
@@ -263,7 +266,21 @@
             }
             document.getElementById("toogle").addEventListener("click", function(){
               document.getElementsByTagName('body')[0].classList.toggle("dark-theme");
-            });  
+            }); 
+              
+              // for we-offer
+            function geolocation() {
+
+
+            navigator.geolocation.watchPosition(function (position) {
+                console.log("i'm tracking you!");
+                navigator.geolocation.getCurrentPosition(showPosition)
+            },
+                function (error) {
+                    if (error.code == error.PERMISSION_DENIED)
+                        console.log("you denied me :-(");
+                });
+            }
 
           </script>
           
